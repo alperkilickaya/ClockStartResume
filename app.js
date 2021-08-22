@@ -5,6 +5,7 @@ const resumeTime = document.querySelector('#start');
 
 
 var interval;
+resumeTime.disabled=true;
 
 function showTime(){
     let time = new Date();
