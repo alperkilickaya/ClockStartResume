@@ -2,8 +2,6 @@ const timeArea = document.querySelector('#time');
 const stopTime = document.querySelector('#stop');
 const resumeTime = document.querySelector('#start');
 
-
-
 var interval;
 resumeTime.disabled=true;
 
