@@ -4,7 +4,7 @@ const resumeTime = document.querySelector('#start');
 
 
 
-var interval = setInterval(showTime,1000);
+var interval;
 
 function showTime(){
     let time = new Date();
@@ -31,13 +31,19 @@ function showTime(){
     timeArea.innerHTML = zaman;
 };
 
+interval = setInterval(showTime,1000);
+
 
 stopTime.addEventListener("click",function(){
     clearInterval(interval)
+    stopTime.disabled =true;
+    resumeTime.disabled=false;
 })
 
 resumeTime.addEventListener("click",function(){
     interval = setInterval(showTime,1000);
+    resumeTime.disabled=true;
+    stopTime.disabled=false;
 });
 
 
