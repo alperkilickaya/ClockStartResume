@@ -12,9 +12,18 @@ function showTime(){
     let saniye = time.getSeconds(); // 0-59
     let am_pm;
   
-    saat = (saat == 0) ? 12 : ((saat > 12) ? (saat - 12): saat); // saat 0 ise 12, değilse; 12'den büyükse saat-12. Yani 15 ise saat 3 olur.
-    am_pm = (saat >= 12) ? "PM" : "AM"; // saat 12 ve büyükse PM kullan.
-   
+
+    if(saat === 00){
+        saat = 12
+        am_pm = 'AM';
+    }
+    else if( saat === 12 ){
+        am_pm = 'PM';
+    }
+    else if( saat > 12){
+        saat = saat - 12
+        am_pm = 'PM';
+    }
   
     saat = saat < 10 ? "0" + saat : saat; // saat 9 ise 09 olarak göstersin
     dakika = dakika < 10 ? "0" + dakika : dakika; // dakika 9 ise 09 göstersin
